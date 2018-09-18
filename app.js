@@ -62,7 +62,6 @@ const runCommand = function (command) {
 
     $('#list').empty();
 
-    //Initializing variables to be used later
     let userName = '';
     let userNumber = '';
     let userPhone = '';
@@ -80,7 +79,6 @@ const runCommand = function (command) {
         case 'lookup':
             userName = $('#lookupinput').val();
             emp = state.employeeList.find(e => e.name.toLowerCase() === userName.toLowerCase());
-            //If nothing was found the find() method returns 'undefined'
             if (typeof emp !== 'undefined') {
                 renderEmployee(emp);
             }
@@ -90,7 +88,6 @@ const runCommand = function (command) {
             break;
         case 'contains':
             userName = $('#containsinput').val();
-            //Add any similar elements to list array. If none found then list array will be empty
             state.employeeList.forEach(e => e.name.toLowerCase().includes(userName.toLowerCase()) ? list.push(e) : '');
             if (list.length !== 0) {
                 list.forEach(e => renderEmployee(e));
@@ -114,11 +111,9 @@ const runCommand = function (command) {
             }
             break;
         case 'add':
-            //Just to make sure the employee doesnt alreadt exist to prevent conflicts
             userName = $('#addnameinput').val();
             emp = state.employeeList.find(e => e.name.toLowerCase() === userName.toLowerCase());
             if (typeof emp === 'undefined') {
-                //just reusing the 'emp' variable, nothing special
                 emp = {
                     name: '',
                     officeNum: '',
@@ -138,7 +133,6 @@ const runCommand = function (command) {
             userName = $('#deleteinput').val();
             emp = state.employeeList.find(e => e.name.toLowerCase() === userName.toLowerCase());
             if (typeof emp !== 'undefined') {
-                //Obtain index so I can use the splice method
                 let index = state.employeeList.indexOf(emp);
                 state.employeeList.splice(index, 1);
                 render('Employee Deleted');
@@ -151,17 +145,14 @@ const runCommand = function (command) {
 }
 
 const show = function (id) {
-    //If something is already visible then hide it
     if (state.last !== '' && state.last !== 'print') {
         $('#' + state.last + 'form').removeClass('show');
     }
 
     $('#list').empty();
 
-    //Keep track of what was last shown
     state.last = id;
 
-    //Showing the wanted page/form
     if (id === 'print') {
         runCommand(id);
     }
@@ -170,7 +161,6 @@ const show = function (id) {
     }
 }
 
-//Surrounding a normal function call like "runCommand( ... )" with function(){} works
 $('#print').on('click', function () { show('print') });
 $('#verify').on('click', function () { show('verify') });
 $('#lookup').on('click', function () { show('lookup') });
@@ -179,7 +169,6 @@ $('#update').on('click', function () { show('update') });
 $('#add').on('click', function () { show('add') });
 $('#delete').on('click', function () { show('delete') });
 
-//Similar stack of onClick calls but for the
 $('#verifysubmit').on('click', function () { runCommand('verify') });
 $('#lookupsubmit').on('click', function () { runCommand('lookup') });
 $('#containssubmit').on('click', function () { runCommand('contains') });

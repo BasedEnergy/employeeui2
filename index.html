@@ -14,59 +14,58 @@
 
 <body>
 
-    <header>
-        <h1 id="bigtext">Employee Manager</h1>
-    </header>
-
     <nav>
         <div id="navbar">
+                <i class="far fa-address-book"></i>
+                <h4>SIMPLICITY</h4>
             <ul>
-                <li><a id="print">Print</a></li>
-                <li><a id="verify">Verify</a></li>
-                <li><a id="lookup">Lookup</a></li>
-                <li><a id="contains">Contains</a></li>
-                <li><a id="update">Update</a></li>
-                <li><a id="add">Add</a></li>
-                <li><a id="delete">Delete</a></li>
+                <li><a id="print">PRINT</a></li>
+                <li><a id="verify">VERIFY</a></li>
+                <li><a id="lookup">LOOKUP</a></li>
+                <li><a id="contains">CONTAINS</a></li>
+                <li><a id="update">UPDATE</a></li>
+                <li><a id="add">ADD</a></li>
+                <li><a id="delete">DELETE</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
+        <img src="background/bckg.jpg">
         <div id="displayboard">
             <form class="page" id="verifyform">
                 <input type="text" id="verifyinput" placeholder="employee name" autocomplete="off" />
-                <button id="verifysubmit">Verify</button>
+                <button id="verifysubmit"><i class="fas fa-search"></i></button>
             </form>
             <form class="page" id="lookupform">
                 <input type="text" id="lookupinput" placeholder="employee name" autocomplete="off" />
-                <button id="lookupsubmit">Lookup</button>
+                <button id="lookupsubmit"><i class="fas fa-search"></i></button>
             </form>
             <form class="page" id="containsform">
                 <input type="text" id="containsinput" placeholder="partial employee name" autocomplete="off" />
-                <button id="containssubmit">Contains</button>
+                <button id="containssubmit"><i class="fas fa-search"></i></button>
             </form>
             <form class="page" id="updateform">
                 <label for="updatenameinput">Name</label><input type="text" id="updatenameinput" placeholder="employee name"
-                    autocomplete="off" /><br>
+                    autocomplete="off" /><br><br>
                 <label for="updatenumberinput">Number</label><input type="text" id="updatenumberinput" placeholder="employee office number"
-                    autocomplete="off" /><br>
+                    autocomplete="off" /><br><br>
                 <label for="updatephoneinput">Phone</label><input type="text" id="updatephoneinput" placeholder="employee phone number"
-                    autocomplete="off" /><br>
-                <button id="updatesubmit">Update</button>
+                    autocomplete="off" /><br><br>
+                <button id="updatesubmit"><i class="fas fa-search"></i></button>
             </form>
             <form class="page" id="addform">
                 <label for="addnameinput">Name</label><input type="text" id="addnameinput" placeholder="employee name"
-                    autocomplete="off" /><br>
+                    autocomplete="off" /><br><br>
                 <label for="addnumberinput">Number</label><input type="text" id="addnumberinput" placeholder="employee office number"
-                    autocomplete="off" /><br>
+                    autocomplete="off" /><br><br>
                 <label for="addphoneinput">Phone</label><input type="text" id="addphoneinput" placeholder="employee phone number"
-                    autocomplete="off" /><br>
-                <button id="addsubmit">Add</button>
+                    autocomplete="off" /><br><br>
+                <button id="addsubmit"><i class="fas fa-search"></i></button>
             </form>
             <form class="page" id="deleteform">
                 <input type="text" id="deleteinput" placeholder="employee name" autocomplete="off" />
-                <button id="deletesubmit">Delete</button>
+                <button id="deletesubmit"><i class="fas fa-search"></i></button>
             </form>
 
             <div id="list"></div>
