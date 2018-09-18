@@ -1,16 +1,16 @@
-body, html {
-    height: 100%;
-    margin: 0;
+header {
+    background-color: #3A7CF8;
+    color: white;
+    position: fixed;
+    top:0;
+    width: 100vw;
 }
 
-main {
-    border: solid white 20px;
-    border-left: solid white 120px;
-    background-image: url(background/bckg.jpg);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#bigtext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
 }
 
 #navbar {
@@ -36,8 +36,8 @@ li {
 }
 
 #displayboard{
-    padding-left: 80px;
-    padding-top: 50px;
+    padding-left: 120px;
+    padding-top: 100px;
 }
 
 .page{

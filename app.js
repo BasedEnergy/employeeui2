@@ -64,10 +64,10 @@ const runCommand = function (command) {
 
     //Initializing variables to be used later
     let userName = '';
-    let userNumber ='';
-    let userPhone='';
-    let list =[];
-    let emp ='';
+    let userNumber = '';
+    let userPhone = '';
+    let list = [];
+    let emp = '';
 
     switch (command) {
         case 'print':
@@ -91,8 +91,8 @@ const runCommand = function (command) {
         case 'contains':
             userName = $('#containsinput').val();
             //Add any similar elements to list array. If none found then list array will be empty
-            state.employeeList.forEach(e => e.name.toLowerCase().includes(userName.toLowerCase())? list.push(e) : '');
-            if(list.length !== 0) {
+            state.employeeList.forEach(e => e.name.toLowerCase().includes(userName.toLowerCase()) ? list.push(e) : '');
+            if (list.length !== 0) {
                 list.forEach(e => renderEmployee(e));
             }
             else {
@@ -150,7 +150,7 @@ const runCommand = function (command) {
     }
 }
 
-const show = function(id) {
+const show = function (id) {
     //If something is already visible then hide it
     if (state.last !== '' && state.last !== 'print') {
         $('#' + state.last + 'form').removeClass('show');
@@ -162,7 +162,7 @@ const show = function(id) {
     state.last = id;
 
     //Showing the wanted page/form
-    if(id === 'print'){
+    if (id === 'print') {
         runCommand(id);
     }
     else {
